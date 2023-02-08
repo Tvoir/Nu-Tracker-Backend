@@ -12,7 +12,7 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Database
-SQLALCHEMY_DATABASE_URI = 'postgresql://iabhwbwp:OkEpTyalmN5WrMbJT5LeFbcKPtuz8amd@kashin.db.elephantsql.com/iabhwbwp'
+SQLALCHEMY_DATABASE_URI = f'{SQLALCHEMY_DATABASE_URI}'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://iabhwbwp:OkEpTyalmN5WrMbJT5LeFbcKPtuz8amd@kashin.db.elephantsql.com/iabhwbwp'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Initialize Database
