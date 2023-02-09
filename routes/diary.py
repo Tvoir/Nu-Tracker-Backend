@@ -3,6 +3,6 @@ from flask import Blueprint, render_template
 
 diary = Blueprint('diary', __name__)
 
-@diary.route('/')
-def diary():
-    return render_template("home.html")
+@diary.route('/diary')
+def diary_page():
+    return render_template("diary.html")

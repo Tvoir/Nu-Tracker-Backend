@@ -26,11 +26,14 @@ ma = Marshmallow
 
 #importing pathways
 from routes.views import views
-
+from routes.macros import macros
+from routes.diary import diary
 
 
 #url prefix is how you access the blueprint
 app.register_blueprint(views, url_prefix='/')
+app.register_blueprint(macros, url_prefix='/')
+app.register_blueprint(diary, url_prefix='/')
 
 # Run Server
 if __name__ == '__main__':

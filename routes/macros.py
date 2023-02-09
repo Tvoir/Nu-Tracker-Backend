@@ -3,6 +3,6 @@ from flask import Blueprint, render_template
 
 macros = Blueprint('macros', __name__)
 
-@macros.route('/')
-def macros():
-    return render_template("home.html")
+@macros.route('/macros')
+def macros_page():
+    return render_template("macros.html")
