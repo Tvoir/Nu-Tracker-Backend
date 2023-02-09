@@ -4,5 +4,5 @@ from flask import Blueprint, render_template
 macros = Blueprint('macros', __name__)
 
 @macros.route('/')
-def home():
+def macros():
     return render_template("home.html")

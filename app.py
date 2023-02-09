@@ -14,7 +14,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Database
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://iabhwbwp:dKqGPwIQB2nkdABmE1mHCjqQSGnma5Ci@kashin.db.elephantsql.com/iabhwbwp'
+app.config.from_pyfile('config/config.cfg')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Initialize Database
 
@@ -26,6 +26,7 @@ ma = Marshmallow
 
 #importing pathways
 from routes.views import views
+
 
 
 #url prefix is how you access the blueprint
