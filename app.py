@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from models import db, UserModel, CalorieIntakeModel, MacroModel
 
 
+
 import os
 
 
@@ -13,11 +14,10 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Database
-
+app.config['SECRET_KEY'] = 'ForbiddenKey'
 app.config.from_pyfile('config/config.cfg')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #Initialize Database
-
 db.init_app(app)
 migrate = Migrate(app, db)
 
@@ -37,6 +37,7 @@ app.register_blueprint(views, url_prefix='/')
 app.register_blueprint(macros, url_prefix='/')
 app.register_blueprint(diary, url_prefix='/')
 app.register_blueprint(auth, url_prefix='/')
+
 
 # Run Server
 if __name__ == '__main__':

@@ -1,11 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
+
 
 
 
 db = SQLAlchemy()
 
-class UserModel(db.Model, UserMixin):
+class UserModel(db.Model):
 
     __tablename__ = 'user_table'
 
@@ -13,8 +13,8 @@ class UserModel(db.Model, UserMixin):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    calorieNotes = db.relationship('CalorieIntakeModel')
-    calorieMacros = db.relationship('MacroModel')
+    #calorieNotes = db.relationship('CalorieIntakeModel')
+    #calorieMacros = db.relationship('MacroModel')
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -28,7 +28,7 @@ class CalorieIntakeModel(db.Model):
     date = db.Column(db.Date, nullable=False)
     food = db.Column(db.String(80), nullable=False)
     calories = db.Column(db.Float, nullable=False)
-    userModel_id = db.Column(db.Interger. db.ForeignKey('UserModel.id'))
+    #userModel_id = db.Column(db.Integer. db.ForeignKey('UserModel.id'))
 
     def __repr__(self):
         return '<CalorieIntake %r>' % self.id
@@ -43,7 +43,7 @@ class MacroModel(db.Model):
     protein = db.Column(db.Float, nullable=False)
     carbohydrates = db.Column(db.Float, nullable=False)
     fat = db.Column(db.Float, nullable=False)
-    userModel_id = db.Column(db.Interger. db.ForeignKey('UserModel.id'))
+    #userModel_id = db.Column(db.Interger. db.ForeignKey('UserModel.id'))
 
     def __repr__(self):
         return '<Macro %r>' % self.id
