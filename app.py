@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from models import db, UserModel, CalorieIntakeModel, MacroModel
+import config
 
 
 
@@ -30,6 +31,7 @@ from routes.macros import macros
 from routes.diary import diary
 from routes.auth import auth
 
+#import databases
 
 
 #url prefix is how you access the blueprint
@@ -37,6 +39,8 @@ app.register_blueprint(views, url_prefix='/')
 app.register_blueprint(macros, url_prefix='/')
 app.register_blueprint(diary, url_prefix='/')
 app.register_blueprint(auth, url_prefix='/')
+
+#creating database
 
 
 # Run Server
