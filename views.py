@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template
 #blueprint is basically roots and url's for the app
+from flask import Blueprint, render_template
 
 views = Blueprint('views', __name__)
 
