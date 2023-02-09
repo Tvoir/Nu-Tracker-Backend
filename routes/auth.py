@@ -1,16 +1,17 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template
+
 
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['GET', 'POST'])
+@auth.route('/login')
 def login():
     return render_template("login.html")
 
 @auth.route('/logout')
 def logout():
-    return "<p>LOGOUT<p/>"
+    return "<h1>Logged out</h1>"
 
-@auth.route('/signup', methods=['GET', 'POST'])
+@auth.route('/signup')
 def signup():
     return render_template("signup.html")
