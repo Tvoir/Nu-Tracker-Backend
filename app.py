@@ -25,7 +25,8 @@ migrate = Migrate(app, db)
 ma = Marshmallow
 
 #importing pathways
-from views import views
+from routes.views import views
+
 
 #url prefix is how you access the blueprint
 app.register_blueprint(views, url_prefix='/')
